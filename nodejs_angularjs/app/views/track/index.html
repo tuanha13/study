@@ -1,0 +1,70 @@
+﻿<div class="clearfix"></div>
+<article class="boundingBox">
+    <section class="section bottomBorder-true">
+        <h3 class="section_title">Tracks</h3>
+        <p>Lorem ipsum dolor sit amet, vidit malis et mei. Et verear commune incorrupte vel, tale saperet praesent ei has. </p>
+    </section>
+
+    <section class="section topBorder-true">
+        <div class="tablebox marginTop5">
+            <table id="filter-table" class="full-width">
+                <thead>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input class="form-control" placeholder="..." />
+                        </td>
+                        <td>
+                            <input class="form-control" placeholder="..." />
+                        </td>
+                        <td>
+                            <input class="form-control" placeholder="..." />
+                        </td>
+                        <td>
+                            <input class="form-control" placeholder="..." />
+                        </td>
+                        <td>
+                            <input class="form-control" placeholder="..." />
+                        </td>
+                        <td>
+                            <div class="col-md-6 no-padding"><input class="form-control" placeholder="From" /></div>
+                            <div class="col-md-6 no-padding"><input class="form-control" placeholder="To" /></div>
+                        </td>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="tablebox marginTop5">
+            <table id="data-table" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th class="sorting" width="5%"><a ng-href="#" class="sort-item">ID</a></th>
+                        <th class="sorting"><a ng-href="#" class="sort-item">RouteID</a></th>
+                        <th class="sorting"><a ng-href="#" class="sort-item">ScheduleID</a></th>
+                        <th class="sorting"><a ng-href="#" class="sort-item">DeviceID</a></th>
+                        <th class="sorting"><a ng-href="#" class="sort-item">LocationType</a></th>
+                        <th class="sorting"><a ng-href="#" class="sort-item">LocationID</a></th>
+                        <th class="sorting"><a ng-href="#" class="sort-item">Timestamp</a></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="track in $ctrl.model.tracks">
+                        <td>{{ track.id}}</td>
+                        <td>{{ track.routeId }}</td>
+                        <td>{{ track.routeScheduleId }}</td>
+                        <td>{{ track.deviceId }}</td>
+                        <td>{{ track.locationType }}</td>
+                        <td>{{ track.locationId }}</td>
+                        <td>{{ track.timestamp | date: 'yyyy-MM-dd HH:mm:ss'}}</td>
+                    </tr>
+                    <tr ng-if="$ctrl.model.tracks.length == 0 || !$ctrl.model.tracks"><td colspan="4">No records found</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="clearfix"></div>
+    </section>
+</article>

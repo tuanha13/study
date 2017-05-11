@@ -1,0 +1,3 @@
+﻿function BaseController() {
+    this.model = {};
+}

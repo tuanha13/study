@@ -1,0 +1,21 @@
+﻿<div class="modal-header">
+    <h3>{{ route ? 'Update Route Point' : 'Add Route Point' }}</h3>
+</div>
+<div class="modal-body">
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Route</label>
+            <div class="col-sm-9"></div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Point name</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" ng-model="route.description">
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn  btn-primary" data-ng-click="options.add()">{{ route ? 'Update' : 'Add' }}</button>
+    <button class="btn" data-ng-click="options.cancel();">Cancel</button>
+</div>

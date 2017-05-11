@@ -1,0 +1,94 @@
+﻿<article class="boundingBox">
+    <section class="section bottomBorder-true">
+        <h3 class="section_title">Routes</h3>
+        <p>Lorem ipsum dolor sit amet, vidit malis et mei. Et verear commune incorrupte vel, tale saperet praesent ei has. </p>
+    </section>
+    <section class="section locationssection">
+        <div class="container-fluid" style="padding:0;">
+            <div class="col-sm-4 locations" style="padding:0;" id="routes">
+                <div class="title_locations">
+                    <span>Routes</span>
+                    <ul class="btns_location">
+                        <li><a ng-click="$ctrl.showAddRouteModal()"><i class="fa fa-plus" aria-hidden="true"></i></a></li>
+                        <li ng-class="{'disabled': !$ctrl.routeIdSelected}"><a ng-click="$ctrl.showDeleteRouteModal()"><i class="fa fa-trash-o" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+                <div class="location_items">
+                    <ul>
+                        <li class="items" ng-repeat="row in $ctrl.model.routes" ng-class="{'selected': row.id == $ctrl.routeIdSelected}" ng-click="$ctrl.onSelectRoute(row.id, $event)">
+                            <a>
+                                <div class="text_content">
+                                    <span><strong>{{ row.name }}</strong></span>
+                                </div>
+                            </a>
+                            <div class="dropdown properties" style="top: 4px;">
+                                <a id="route-{{ row.id }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    <i class="fa fa-gear" aria-hidden="true"></i>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="route-{{ row.id }}">
+                                    <li><a ng-click="$ctrl.showEditRouteModal(row.id)">Edit Properties</a></li>
+                                    <li><a ng-click="$ctrl.showDeleteRouteModal(row.id)">Delete</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-4 locations" style="padding:0;" id="route-points">
+                <div class="title_locations">
+                    <span>Route Points</span>
+                    <ul class="btns_location">
+                        <li ng-class="{'disabled': !$ctrl.routeIdSelected}"><a ng-click="$ctrl.showAddRoutePointModal()"><i class="fa fa-plus" aria-hidden="true"></i></a></li>
+                        <li ng-class="{'disabled': !$ctrl.routePointIdSelected}"><a ng-click="$ctrl.showDeleteRoutePointModal()"><i class="fa fa-trash-o" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+                <div class="location_items">
+                    <ul>
+                        <li class="items" ng-repeat="row in $ctrl.model.routePoints" ng-class="{'selected': row.id == $ctrl.routePointIdSelected}" ng-click="$ctrl.onSelectRoutePoint(row.id, $event)">
+                            <a>
+                                <div class="text_content">
+                                    <span><strong>{{ row.description }}</strong></span>
+                                </div>
+                            </a>
+                            <div class="dropdown properties" style="top: 4px;">
+                                <a id="route-point-{{ row.id }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="fa fa-gear" aria-hidden="true"></i></a>
+                                <ul class="dropdown-menu" aria-labelledby="route-point-{{ row.id }}">
+                                    <li><a ng-click="$ctrl.showEditRoutePointModal(row.id)">Edit Properties</a></li>
+                                    <li><a ng-click="$ctrl.showDeleteRoutePointModal(row.id)">Delete</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-4 locations" style="padding:0;" id="route-schedules">
+                <div class="title_locations">
+                    <span>Route Schedules</span>
+                    <ul class="btns_location">
+                        <li ng-class="{'disabled': !$ctrl.routeIdSelected}"><a ng-click="$ctrl.showAddRouteScheduleModal()"><i class="fa fa-plus" aria-hidden="true"></i></a></li>
+                        <li ng-class="{'disabled': !$ctrl.routeScheduleIdSelected}"><a ng-click="$ctrl.showDeleteRouteScheduleModal()"><i class="fa fa-trash-o" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+                <div class="location_items">
+                    <ul>
+                        <li class="items" ng-repeat="row in $ctrl.model.routeSchedules" ng-class="{'selected': row.id == $ctrl.routeScheduleIdSelected}" ng-click="$ctrl.onSelectRouteSchedule(row.id, $event)">
+                            <a>
+                                <div class="text_content">
+                                    <p><span>Start: {{ row.start }}</span></p>
+                                    <p><span>Finish: {{ row.end }}</span></p>
+                                </div>
+                            </a>
+                            <div class="dropdown properties">
+                                <a id="route-schedule-{{ row.id }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="fa fa-gear" aria-hidden="true"></i></a>
+                                <ul class="dropdown-menu" aria-labelledby="route-schedule-{{ row.id }}">
+                                    <li><a ng-click="$ctrl.showEditRouteScheduleModal(row.id)">Edit Properties</a></li>
+                                    <li><a ng-click="$ctrl.showDeleteRouteScheduleModal(row.id)">Delete</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</article>
